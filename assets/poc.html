@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    url = 'http://0.0.0.0:7777/query';
+
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: '{"operationName":null,"variables":{},"query":"{  test {    description  }}"}',
+        dataType: "json",
+        contentType: "application/json",
+        success: function( data ) {
+            $("p").html(data.data.test.description);
+        },
+        error: function( data ) {
+            $("p").html( data );
+        }
+    });
+});
+</script>
+</head>
+<body>
+
+<p>Not loaded yet.</p>
+
+</body>
+</html>

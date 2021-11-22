@@ -1,0 +1,3 @@
+#!/bin/sh
+go fmt ./...
+go run ./cmd/server/server.go

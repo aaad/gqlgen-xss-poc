@@ -1,0 +1,9 @@
+extend type Query {
+  test: TestResult
+}
+
+# TestResult describes a result containing an XSS string
+type TestResult {
+  # description describes a message containing a XSS string
+  description: String!
+}
